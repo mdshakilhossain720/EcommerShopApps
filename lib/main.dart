@@ -1,9 +1,10 @@
+
 import 'package:flutter/material.dart';
-
 import 'apps.dart';
-
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
+
+
 
 

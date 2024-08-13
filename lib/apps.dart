@@ -1,14 +1,32 @@
-import 'package:ecommerceshop/presentations/utility/appcolor.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyApp extends StatelessWidget {
-    MyApp({super.key});
+import 'presentations/screen/splash_screen.dart';
+import 'presentations/utility/appcolor.dart';
 
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      home: SplashScreen(),
       theme: ThemeData(
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: AppColors.primaryColor
+          )
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
         colorSchemeSeed: AppColors.primaryColor,
         progressIndicatorTheme: ProgressIndicatorThemeData(
           color: AppColors.primaryColor,
@@ -41,6 +59,7 @@ class MyApp extends StatelessWidget {
 
     );
   }
+
   TextTheme _textTheme ()=>TextTheme(
 
       titleLarge: TextStyle(
@@ -54,7 +73,6 @@ class MyApp extends StatelessWidget {
       )
 
   );
-
 
   InputDecorationTheme _inputDecorationTheme()=>InputDecorationTheme(
     hintStyle: TextStyle(
@@ -74,8 +92,9 @@ class MyApp extends StatelessWidget {
   );
 
   OutlineInputBorder outlineInputBorder =OutlineInputBorder(
-    borderSide: BorderSide(
-      color: AppColors.primaryColor
-    )
+      borderSide: BorderSide(
+          color: AppColors.primaryColor
+      )
   );
 }
+

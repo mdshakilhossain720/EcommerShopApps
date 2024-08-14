@@ -1,4 +1,6 @@
+import 'package:ecommerceshop/presentations/screen/review_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:item_count_number_button/item_count_number_button.dart';
 
 import '../utility/appcolor.dart';
@@ -142,7 +144,9 @@ class _ProductDetailsState extends State<ProductDetails> {
             Text("0.4"),
           ],
         ),
-        TextButton(onPressed: () {}, child: Text("Reviews")),
+        TextButton(onPressed: () {
+          Get.to(()=>ReviewScreen());
+        }, child: Text("Reviews")),
         Wrap(
           children: [
             Card(

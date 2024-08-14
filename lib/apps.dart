@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'binding.dart';
 import 'presentations/screen/splash_screen.dart';
 import 'presentations/utility/appcolor.dart';
 
@@ -17,6 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: SplashScreen(),
+      initialBinding: ControllerBinding(),
       theme: ThemeData(
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(

@@ -81,7 +81,31 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 12,
               ),
-              ProductCard(),
+              popularProductList(),
+              SizedBox(
+                height: 12,
+              ),
+
+              Hearsection(
+                title: 'Special Products',
+                ontab: () {},
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              popularProductList(),
+              SizedBox(
+                height: 12,
+              ),
+              Hearsection(
+                title: 'New Products',
+                ontab: () {},
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              popularProductList(),
+              //ProductCard(),
             ],
           ),
         ),
@@ -98,6 +122,25 @@ class _HomePageState extends State<HomePage> {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return CategoryCardItem();
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return SizedBox(
+            width: 8,
+          );
+        },
+      ),
+    );
+  }
+
+  Widget popularProductList() {
+    return SizedBox(
+      height: 230,
+      child: ListView.separated(
+        itemCount: 8,
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return ProductCard();
         },
         separatorBuilder: (BuildContext context, int index) {
           return SizedBox(

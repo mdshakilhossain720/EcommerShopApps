@@ -9,14 +9,19 @@ import 'presentations/utility/appcolor.dart';
 class MyApp extends StatefulWidget {
   MyApp({super.key});
 
+ static GlobalKey<NavigatorState>globalKey=GlobalKey<NavigatorState>();
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      navigatorKey:MyApp.globalKey ,
       home: SplashScreen(),
       initialBinding: ControllerBinding(),
       theme: ThemeData(
